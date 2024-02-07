@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeepsilog</title>
+    <style>
+        header {
+            background-color: #670000;
+            color: #fff;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            width: 100px; 
+            height: auto; 
+        }
+        
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+        
+        nav ul li {
+            margin-right: 20px;
+            position: relative;
+        }
+        
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px;
+            display: block;
+        }
+        
+       
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #dc2020; 
+            min-width: 160px;
+            z-index: 1;
+        }
+        
+        .dropdown-content a {
+            color: #fff;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        
+        .dropdown-content a:hover {
+            background-color: #821b1b; 
+        }
+        
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        
+        .dropdown:hover .dropbtn {
+            background-color: #dc143c; 
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+ .fixed-background {
+            position: relative;
+            height: 50vh; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://primer.com.ph/tips-guides/wp-content/uploads/sites/5/2019/08/tosilog-1-1024x680.jpg');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.7;
+        }
+
+        .section-content {
+            z-index: 1; 
+            text-align: center;
+        }
+
+        h1 {
+            font-family: "Verdana"; 
+            font-size: 50px;
+            color: #000000;
+        }
+
+        p {
+            text-indent: 20px;
+            text-align: center;
+            padding: 10px;
+            margin: 20;
+			color: #000000;
+        }
+		
+		
+		h1 {
+            font-family: "Verdana"; 
+            font-size: 50px;
+            color: #000000;
+        }
+
+        p {
+            text-indent: 20px;
+            text-align: justify;
+            padding: 5px;
+            margin: 50;
+			color: #000000;
+        }
+		    table {
+            width: 80%; 
+            margin: 0 auto; 
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 30px;
+            border: 0px; 
+			text-align: center;
+			line-height: 1.6;
+			}
+		.button-container {
+            padding-top: 20px; 
+            padding-bottom: 20px; 
+        }
+		
+		
+		footer {
+            background-color: #670000;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            margin: 0; 
+            width: 100%; 
+        }
+		
+		.image-with-shadow {
+        width: 300px; 
+        height: auto; 
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.9); 
+		padding: 30px;
+    }
+</style>
+</head>
+<body>
+
+<header>
+        <div class="logo">
+            <img src="https://scontent.fmnl2-2.fna.fbcdn.net/v/t39.30808-6/299189723_379508234356253_7505375250945999595_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=efb6e6&_nc_ohc=k4wKLV2-e48AX8uqvQ5&_nc_oc=AQkdK1no81xxXZB90bhMTJyNWFVbpTLwKt0La3WAruMIMUku_WuND3bdPZflDe4ooTc&_nc_ht=scontent.fmnl2-2.fna&oh=00_AfBxf6zOeBSL-dcEVPsrauyFKans8tzcP2yp-WCNdOGGmw&oe=65C57C4E" alt="Business Logo" width="50"; height="50";>
+        </div>
+        <nav>
+            <ul>
+				
+				<li class="dropdown">
+                    <a href="#">Home</a>
+                    <div class="dropdown-content">
+                        <a href="#best">Bestsellers</a>
+                        <a href="#how">How to Order?</a>
+                        <a href="https://www.facebook.com/jeepsilogph">Facebook</a>
+						<a href="https://www.instagram.com/jeepsilogph">Instagram</a>
+                    </div>
+                </li>
+				<li><a href="file:///C:/Users/gavin/Downloads/PROJECT%20SUBMISSION/MENU.html">Menu</a></li>
+                <li><a href="file:///C:/Users/gavin/Downloads/PROJECT%20SUBMISSION/ABOUT%20US.html">About Us</a></li>
+                <li><a href="file:///C:/Users/gavin/Downloads/PROJECT%20SUBMISSION/APPLY.html">Hiring</a></li>
+            </ul>
+        </nav>
+    </header>
+	
+	
+	<section class="fixed-background">
+        <div class="overlay"></div>
+        <div class="section-content">
+            <h1>About <b>JEEPSILOG PH</b></h1>
+            <center>
+<a href="https://www.facebook.com/jeepsilogph" style="display: inline-block; background-color: #750c0c; color: #fff; padding: 10px 20px; text-decoration: none; border-radius: 5px;">Inquire Now!</a>
+</center>
+        </div>
+    </section>
+
+<p>In the midst of unprecedented challenges brought about by the global pandemic, a culinary gem emerged, offering not just food but a taste of home and tradition. "Jeepsilog PH" was born out of the passion and determination of its founder, Ana Cantos, whose love for cooking ignited a journey filled with flavors, memories, and community.
+As the world grappled with uncertainty, Ana found solace and inspiration in the kitchen. Cooking became more than just a necessity; it became a form of therapy, a creative outlet amidst the chaos. With a deep-rooted affection for Filipino cuisine and a desire to share its warmth with others, Ana embarked on a mission to create something special. </p>
+<p>Driven by her entrepreneurial spirit and fueled by her love for food, Ana founded "Jeepsilog PH" with a simple yet powerful vision: to bring authentic Filipino silog meals to every home. Drawing inspiration from the iconic jeepney, a symbol of Filipino culture and resilience, Ana crafted a menu that celebrated the rich flavors and heritage of the Philippines.
+What started as a passion project quickly gained momentum, as word spread about the mouthwatering delights served by Jeepsilog PH. From classic tapsilog to innovative twists on traditional favorites, each dish was crafted with love and attention to detail, earning rave reviews from patrons near and far.</p>
+<p>But beyond the delicious food, Jeepsilog PH became a beacon of hope and community during challenging times. As customers gathered around the table to share a meal, they found comfort in familiar flavors and companionship in their fellow diners. Jeepsilog PH wasn't just a restaurant; it was a gathering place, a home away from home.
+Today, as Jeepsilog PH continues to thrive, Ana remains committed to her founding principles of quality, authenticity, and passion. With each dish served, she honors the legacy of Filipino cuisine and pays homage to the resilience of her community.</p>
+<p>In the face of adversity, Ana Cantos and Jeepsilog PH stand as a testament to the power of passion, perseverance, and the profound impact of food to bring people together.</p>
+
+<center>
+<img src="https://scontent.fmnl2-2.fna.fbcdn.net/v/t1.6435-9/69834052_10206220009976709_1087619279945203712_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=dd63ad&_nc_ohc=md41hYsCMvQAX-BogLx&_nc_ht=scontent.fmnl2-2.fna&oh=00_AfCYOYzpvcCDhZFcnih5mLGLoknR4ExkbxoRfDCPbxu5Cg&oe=65E8DECE" alt="Image 1" class="image-with-shadow">
+
+<img src="https://scontent.fmnl2-2.fna.fbcdn.net/v/t1.6435-9/69694146_10206219981015985_8574629132443320320_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=dd63ad&_nc_ohc=Earsp-k6wV0AX-hQjXP&_nc_ht=scontent.fmnl2-2.fna&oh=00_AfDxcNNONzib1F8A9qBNrMgSZcbADLoZPZqgd9PhlQp1RA&oe=65E8B551" alt="Image 2" class="image-with-shadow">
+
+
+</center>
+
+<center>
+<div class="button-container">
+		<a href="file:///C:/Users/gavin/Downloads/PROJECT%20SUBMISSION/MAINPAGE.html" style="display: inline-block; background-color: #750c0c; color: #fff; padding: 10px 20px; text-decoration: none; border-radius: 5px;">Back Home</a>
+		</div>
+</center>
+
+
+
+
+
+
+
+
+<footer>
+        &copy;  2024 Gavin Mikaela S. Escobar - JEEPSILOG PH
+    </footer>
+
+
+</body>
+</html>

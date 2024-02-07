@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeepsilog</title>
+    <style>
+        header {
+            background-color: #670000;
+            color: #fff;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            width: 100px; 
+            height: auto; 
+        }
+        
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+        
+        nav ul li {
+            margin-right: 20px;
+            position: relative;
+        }
+        
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px;
+            display: block;
+        }
+        
+        /* Dropdown Styles */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #dc2020; 
+            min-width: 160px;
+            z-index: 1;
+        }
+        
+        .dropdown-content a {
+            color: #fff;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        
+        .dropdown-content a:hover {
+            background-color: #821b1b; 
+        }
+        
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        
+        .dropdown:hover .dropbtn {
+            background-color: #dc143c; 
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+ .fixed-background {
+            position: relative;
+            height: 50vh; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://primer.com.ph/tips-guides/wp-content/uploads/sites/5/2019/08/tosilog-1-1024x680.jpg');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.7;
+        }
+
+        .section-content {
+            z-index: 1; 
+            text-align: center;
+        }
+
+        h1 {
+            font-family: "Verdana"; 
+            font-size: 50px;
+            color: #000000;
+        }
+
+        p {
+            text-indent: 20px;
+            text-align: center;
+            padding: 10px;
+            margin: 20;
+			color: #000000;
+        }
+		
+		
+		h1 {
+            font-family: "Verdana"; 
+            font-size: 50px;
+            color: #000000;
+        }
+
+        p {
+            text-indent: 20px;
+            text-align: justify;
+            padding: 5px;
+            margin: 50;
+			color: #000000;
+        }
+		    table {
+            width: 80%; 
+            margin: 0 auto; 
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 30px;
+            border: 0px; 
+			text-align: center;
+			line-height: 1.6;
+			}
+		.button-container {
+            padding-top: 20px; 
+            padding-bottom: 20px; 
+        }
+		
+		
+		footer {
+            background-color: #670000;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            margin: 0; 
+            width: 100%; 
+        }
+		
+		.image-with-shadow {
+        width: 300px; 
+        height: auto; 
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.9); 
+		padding: 30px;
+    }
+	
+	
+	
+	
+    .container {
+        position: relative;
+        width: 200px;
+		margin: 10px;
+		text-align: center;
+    }
+    
+	
+
+    .gallery {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+ 
+    .gallery img {
+        max-width: 100%;
+        height: auto;
+        margin: 10px; 
+    }
+	
+	
+	.lightbox {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.9);
+    }
+    .lightbox img {
+      display: block;
+      margin: auto;
+      margin-top: 10%;
+      max-width: 80%;
+      max-height: 80%;
+    }
+    .close-btn {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 30px;
+      color: #fff;
+      cursor: pointer;
+    }
+	
+	 .section-content {
+            z-index: 1; 
+            text-align: center;
+        }
+
+        h1 {
+            font-family: "Verdana"; 
+            font-size: 50px;
+            color: #000000;
+        }
+
+        p {
+            text-indent: 20px;
+            text-align: center;
+            padding: 10px;
+            margin: 20;
+			color: #000000;
+        }
+		    table {
+            width: 80%; 
+            margin: 0 auto; 
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 30px;
+            border: 0px; 
+			text-align: center;
+			line-height: 1.6;
+			}
+		.button-container {
+            padding-top: 20px; 
+            padding-bottom: 20px; 
+        }
+		
+		.content-above {
+            background-color: #f1f1f1;
+            padding: 20px;
+            text-align: center;
+
+			
+        }
+		.white-inter {
+            background-color: #ffffff;
+            padding: 20px;
+            text-align: center;
+        }  
+</style>
+</head>
+<body>
+
+<header>
+        <div class="logo">
+            <img src="https://scontent.fmnl2-2.fna.fbcdn.net/v/t39.30808-6/299189723_379508234356253_7505375250945999595_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=efb6e6&_nc_ohc=k4wKLV2-e48AX8uqvQ5&_nc_oc=AQkdK1no81xxXZB90bhMTJyNWFVbpTLwKt0La3WAruMIMUku_WuND3bdPZflDe4ooTc&_nc_ht=scontent.fmnl2-2.fna&oh=00_AfBxf6zOeBSL-dcEVPsrauyFKans8tzcP2yp-WCNdOGGmw&oe=65C57C4E" alt="Business Logo" width="50"; height="50";>
+        </div>
+        <nav>
+            <ul>
+				
+				<li class="dropdown">
+                    <a href="#">Home</a>
+                    <div class="dropdown-content">
+                        <a href="#best">Bestsellers</a>
+                        <a href="#how">How to Order?</a>
+                        <a href="https://www.facebook.com/jeepsilogph">Facebook</a>
+						<a href="https://www.instagram.com/jeepsilogph">Instagram</a>
+                    </div>
+                </li>
+				<li><a href="file:///C:/Users/gavin/Downloads/PROJECT%20SUBMISSION/MENU.html">Menu</a></li>
+                <li><a href="file:///C:/Users/gavin/Downloads/PROJECT%20SUBMISSION/ABOUT%20US.html">About Us</a></li>
+                <li><a href="file:///C:/Users/gavin/Downloads/PROJECT%20SUBMISSION/APPLY.html">Hiring</a></li>
+            </ul>
+        </nav>
+    </header>
+	
+	
+	<section class="fixed-background">
+        <div class="overlay"></div>
+        <div class="section-content">
+            <h1>JEEPSILOG Menu</b></h1>
+            <center>
+<a href="https://www.facebook.com/jeepsilogph" style="display: inline-block; background-color: #750c0c; color: #fff; padding: 10px 20px; text-decoration: none; border-radius: 5px;">Inquire Now!</a>
+</center>
+        </div>
+    </section>
+
+
+
+<div class="white-inter">
+
+<h1>Pricelist</h1>
+
+	<img src="https://scontent.fmnl2-2.fna.fbcdn.net/v/t39.30808-6/270779248_713252400059828_3451017731459236220_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=53663d&_nc_ohc=R7T2IUBgiM0AX-ltunn&_nc_oc=AQkX0MoRO1RtewXdOueUeH-tIVUYWUDe9l7FahZMDWOU4SBI3Yi6rL0RFJMbbevUlwY&_nc_ht=scontent.fmnl2-2.fna&oh=00_AfDic6Bdz3ENXjZneZSKSQh867pDixbpoKeOnRptLdQb6w&oe=65C7DB9F" alt="Image 1" onclick="openLightbox('https://scontent.fmnl2-2.fna.fbcdn.net/v/t39.30808-6/270779248_713252400059828_3451017731459236220_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=53663d&_nc_ohc=R7T2IUBgiM0AX-ltunn&_nc_oc=AQkX0MoRO1RtewXdOueUeH-tIVUYWUDe9l7FahZMDWOU4SBI3Yi6rL0RFJMbbevUlwY&_nc_ht=scontent.fmnl2-2.fna&oh=00_AfDic6Bdz3ENXjZneZSKSQh867pDixbpoKeOnRptLdQb6w&oe=65C7DB9F')" width="300" height="300">
+	<img src="https://scontent.fmnl2-2.fna.fbcdn.net/v/t39.30808-6/271601710_713253000059768_3423676014148115774_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=53663d&_nc_ohc=NtuGeRjvUhMAX8p8alA&_nc_ht=scontent.fmnl2-2.fna&oh=00_AfDaNXmJBpU6OOXjgVtLQKcMWfA2zI0OWrrQYVqUsS-48Q&oe=65C75C82" alt="Image 2" onclick="openLightbox('https://scontent.fmnl2-2.fna.fbcdn.net/v/t39.30808-6/271601710_713253000059768_3423676014148115774_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=53663d&_nc_ohc=NtuGeRjvUhMAX8p8alA&_nc_ht=scontent.fmnl2-2.fna&oh=00_AfDaNXmJBpU6OOXjgVtLQKcMWfA2zI0OWrrQYVqUsS-48Q&oe=65C75C82')" width="300" height="300">
+	<img src="https://scontent.fmnl2-2.fna.fbcdn.net/v/t39.30808-6/270224376_713253863393015_2788726651896427979_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=53663d&_nc_ohc=hZmvTmMhGbYAX-V2k7z&_nc_ht=scontent.fmnl2-2.fna&oh=00_AfANUnC8dZmRmcM0_ccKka-zADXthiO4cCrppkQFIGrIOA&oe=65C780FB" alt="Image 3" onclick="openLightbox('https://scontent.fmnl2-2.fna.fbcdn.net/v/t39.30808-6/270224376_713253863393015_2788726651896427979_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=53663d&_nc_ohc=hZmvTmMhGbYAX-V2k7z&_nc_ht=scontent.fmnl2-2.fna&oh=00_AfANUnC8dZmRmcM0_ccKka-zADXthiO4cCrppkQFIGrIOA&oe=65C780FB')" width="300" height="300">
+	<img src="https://scontent.fmnl2-2.fna.fbcdn.net/v/t39.30808-6/271760228_713254286726306_3363817683665110908_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=53663d&_nc_ohc=iaoVKXdaG1wAX-BupeD&_nc_ht=scontent.fmnl2-2.fna&oh=00_AfBXh5LDLK1JmtieGyDv1LQDR_s3rn1WxY85BefcixAXEA&oe=65C84740" alt="Image 4" onclick="openLightbox('https://scontent.fmnl2-2.fna.fbcdn.net/v/t39.30808-6/271760228_713254286726306_3363817683665110908_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=53663d&_nc_ohc=iaoVKXdaG1wAX-BupeD&_nc_ht=scontent.fmnl2-2.fna&oh=00_AfBXh5LDLK1JmtieGyDv1LQDR_s3rn1WxY85BefcixAXEA&oe=65C84740')" width="300" height="300">
+	</br>
+	<img src="https://scontent.fmnl2-2.fna.fbcdn.net/v/t39.30808-6/271868086_713254830059585_5565319998090919647_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=53663d&_nc_ohc=7BQyWquQcO4AX_COdXz&_nc_ht=scontent.fmnl2-2.fna&oh=00_AfA9LRZ4WJL-VT0TXynBjBsaKBFrQGno0GDulvKoE9_mfg&oe=65C7FC63" alt="Image 5" onclick="openLightbox('https://scontent.fmnl2-2.fna.fbcdn.net/v/t39.30808-6/271868086_713254830059585_5565319998090919647_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=53663d&_nc_ohc=7BQyWquQcO4AX_COdXz&_nc_ht=scontent.fmnl2-2.fna&oh=00_AfA9LRZ4WJL-VT0TXynBjBsaKBFrQGno0GDulvKoE9_mfg&oe=65C7FC63')" width="300" height="300">
+	<img src="https://scontent.fmnl2-2.fna.fbcdn.net/v/t39.30808-6/271870503_713255180059550_8181291741872618724_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=53663d&_nc_ohc=Exz4PYB0TKIAX_qjBoC&_nc_ht=scontent.fmnl2-2.fna&oh=00_AfDAbd2VXDKm6pBwyV9bvYaDGSn0bOKqqWrkA3S950IT4w&oe=65C7E8A5" alt="Image 6" onclick="openLightbox('https://scontent.fmnl2-2.fna.fbcdn.net/v/t39.30808-6/271870503_713255180059550_8181291741872618724_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=53663d&_nc_ohc=Exz4PYB0TKIAX_qjBoC&_nc_ht=scontent.fmnl2-2.fna&oh=00_AfDAbd2VXDKm6pBwyV9bvYaDGSn0bOKqqWrkA3S950IT4w&oe=65C7E8A5')" width="300" height="300">
+	<img src="https://scontent.fmnl2-2.fna.fbcdn.net/v/t39.30808-6/271755639_713255576726177_2687125980017240569_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=53663d&_nc_ohc=HOsJ5eEXPL8AX9i7_LM&_nc_ht=scontent.fmnl2-2.fna&oh=00_AfBkEtZn4n840dFPopJ7KoQTd3zORFr9B5OmvHNnh9Ucqw&oe=65C6A8ED" alt="Image 7" onclick="openLightbox('https://scontent.fmnl2-2.fna.fbcdn.net/v/t39.30808-6/271755639_713255576726177_2687125980017240569_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=53663d&_nc_ohc=HOsJ5eEXPL8AX9i7_LM&_nc_ht=scontent.fmnl2-2.fna&oh=00_AfBkEtZn4n840dFPopJ7KoQTd3zORFr9B5OmvHNnh9Ucqw&oe=65C6A8ED')" width="300" height="300">
+	<img src="https://scontent.fmnl2-2.fna.fbcdn.net/v/t39.30808-6/271841206_713256043392797_3082619676208573181_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=53663d&_nc_ohc=GiOQ3SlNcEsAX-FYxG-&_nc_ht=scontent.fmnl2-2.fna&oh=00_AfCDxA-eaXMnAxOMWUexYeiHieWv8OOmJx0h_fx81DznSg&oe=65C7DED5" alt="Image 8" onclick="openLightbox('https://scontent.fmnl2-2.fna.fbcdn.net/v/t39.30808-6/271841206_713256043392797_3082619676208573181_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=53663d&_nc_ohc=GiOQ3SlNcEsAX-FYxG-&_nc_ht=scontent.fmnl2-2.fna&oh=00_AfCDxA-eaXMnAxOMWUexYeiHieWv8OOmJx0h_fx81DznSg&oe=65C7DED5')" width="300" height="300">
+
+
+</br>
+</br>
+</br>
+
+<div class="content-above">
+
+<h2>We accept catering and pop up requests</h2>
+
+	<img src="https://scontent.fmnl2-2.fna.fbcdn.net/v/t39.30808-6/359833361_10210847814508930_3610163245024423662_n.jpg?stp=cp6_dst-jpg&_nc_cat=107&ccb=1-7&_nc_sid=dd5e9f&_nc_ohc=W0mLTvJJOY0AX8oxc2y&_nc_ht=scontent.fmnl2-2.fna&oh=00_AfAUY2U5HX_nm-Hn3d_bmx-Q0Yxe_HMXLmkiaykNFMJbRw&oe=65C74A49" alt="Catering" onclick="openLightbox('https://scontent.fmnl2-2.fna.fbcdn.net/v/t39.30808-6/359833361_10210847814508930_3610163245024423662_n.jpg?stp=cp6_dst-jpg&_nc_cat=107&ccb=1-7&_nc_sid=dd5e9f&_nc_ohc=W0mLTvJJOY0AX8oxc2y&_nc_ht=scontent.fmnl2-2.fna&oh=00_AfAUY2U5HX_nm-Hn3d_bmx-Q0Yxe_HMXLmkiaykNFMJbRw&oe=65C74A49')" width="300" height="400">
+	<img src="https://scontent.fmnl2-2.fna.fbcdn.net/v/t1.6435-9/80464094_10206635709288932_6896945972400619520_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=dd63ad&_nc_ohc=rnqMXuzgrxAAX8EXBfK&_nc_ht=scontent.fmnl2-2.fna&oh=00_AfB_uwiEKXpG9zbeb0ZT4C585XJ0ysOCAm9lbm6dwkuRiQ&oe=65EA0A0B" alt="Popup" onclick="openLightbox('https://scontent.fmnl2-2.fna.fbcdn.net/v/t1.6435-9/80464094_10206635709288932_6896945972400619520_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=dd63ad&_nc_ohc=rnqMXuzgrxAAX8EXBfK&_nc_ht=scontent.fmnl2-2.fna&oh=00_AfB_uwiEKXpG9zbeb0ZT4C585XJ0ysOCAm9lbm6dwkuRiQ&oe=65EA0A0B')" width="300" height="400">
+
+<div id="lightbox" class="lightbox">
+  <span class="close-btn" onclick="closeLightbox()">&times;</span>
+  <img id="lightbox-img" src="" alt="Popup Image">
+</div>
+
+<center>
+<div class="button-container">
+		<a href="file:///C:/Users/gavin/Downloads/PROJECT%20SUBMISSION/MAINPAGE.html" style="display: inline-block; background-color: #750c0c; color: #fff; padding: 10px 20px; text-decoration: none; border-radius: 5px;">Back Home</a>
+		</div>
+</center>
+
+</div>
+
+
+
+
+
+
+
+
+<footer>
+        &copy;  2024 Gavin Mikaela S. Escobar - JEEPSILOG PH
+    </footer>
+
+
+
+
+<script>
+    function openLightbox(imageUrl) {
+        var lightbox = document.getElementById('lightbox');
+        var lightboxImg = document.getElementById('lightbox-img');
+        lightboxImg.src = imageUrl;
+        lightbox.style.display = 'block';
+    }
+
+    function closeLightbox() {
+        document.getElementById('lightbox').style.display = 'none';
+    }
+</script>
+
+</body>
+</html>

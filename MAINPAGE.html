@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeepsilog Mainpage</title>
+    <style>
+        header {
+            background-color: #670000;
+            color: #fff;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            width: 100px;
+            height: auto; 
+        }
+        
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+        
+        nav ul li {
+            margin-right: 20px;
+            position: relative;
+        }
+        
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px;
+            display: block;
+        }
+        
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #dc2020; 
+            min-width: 160px;
+            z-index: 1;
+        }
+        
+        .dropdown-content a {
+            color: #fff;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        
+        .dropdown-content a:hover {
+            background-color: #821b1b; 
+        }
+        
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        
+        .dropdown:hover .dropbtn {
+            background-color: #dc143c;
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .content-above {
+            background-color: #f1f1f1;
+            padding: 20px;
+            text-align: center;
+			
+        }
+		.white-inter {
+            background-color: #ffffff;
+            padding: 20px;
+            text-align: center;
+        }  
+
+        .fixed-background {
+            position: relative;
+            height: 50vh; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://primer.com.ph/tips-guides/wp-content/uploads/sites/5/2019/08/tosilog-1-1024x680.jpg'); 
+            background-size: cover;
+            background-position: center;
+            opacity: 0.7;
+        }
+
+        .section-content {
+            z-index: 1; 
+            text-align: center;
+        }
+
+        h1 {
+            font-family: "Verdana"; 
+            font-size: 50px;
+            color: #000000;
+        }
+
+        p {
+            text-indent: 20px;
+            text-align: center;
+            padding: 10px;
+            margin: 20;
+			color: #000000;
+        }
+		    table {
+            width: 80%; 
+            margin: 0 auto; 
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 30px;
+            border: 0px; 
+			text-align: center;
+			line-height: 1.6;
+			}
+		.button-container {
+            padding-top: 20px; 
+            padding-bottom: 20px; 
+        }
+		
+	.lightbox {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.9);
+    }
+    .lightbox img {
+      display: block;
+      margin: auto;
+      margin-top: 10%;
+      max-width: 80%;
+      max-height: 80%;
+    }
+    .close-btn {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 30px;
+      color: #fff;
+      cursor: pointer;
+    }
+	
+	.footer {
+        background-color: #670000;
+        padding: 20px;
+    }
+
+    .footer-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    .footer-column {
+        flex: 1;
+        margin-right: 20px;
+    }
+
+    .footer-column h3 {
+        margin-bottom: 10px;
+        color: #333;
+    }
+
+    .social-icons {
+        display: flex;
+        align-items: center;
+    }
+
+    .social-icons a {
+        margin-right: 10px;
+    }
+
+    .social-icons a img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+    }
+
+
+		.left-aligned-text {
+        text-align: left;
+    }
+		 .left-align-table td {
+        text-align: left;
+		 margin: 0;
+    }
+	
+	
+	.image-container {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            margin: 100px auto; 
+            overflow: hidden; 
+        }
+
+        .animated-image {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 100%;
+            animation: hoverAnimation 2s infinite alternate; 
+        }
+
+       
+        @keyframes hoverAnimation {
+            0% {
+                transform: translate(-50%, -50%) translateY(0);
+            }
+            100% {
+                transform: translate(-50%, -50%) translateY(-20px);
+            }
+        }
+	
+	
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="https://scontent.fmnl2-2.fna.fbcdn.net/v/t39.30808-6/299189723_379508234356253_7505375250945999595_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=efb6e6&_nc_ohc=k4wKLV2-e48AX8uqvQ5&_nc_oc=AQkdK1no81xxXZB90bhMTJyNWFVbpTLwKt0La3WAruMIMUku_WuND3bdPZflDe4ooTc&_nc_ht=scontent.fmnl2-2.fna&oh=00_AfBxf6zOeBSL-dcEVPsrauyFKans8tzcP2yp-WCNdOGGmw&oe=65C57C4E" alt="Business Logo" width="50"; height="50";>
+        </div>
+        <nav>
+            <ul>
+				
+				<li class="dropdown">
+                    <a href="#">Home</a>
+                    <div class="dropdown-content">
+                        <a href="#best">Bestsellers</a>
+                        <a href="#how">How to Order?</a>
+                        <a href="https://www.facebook.com/jeepsilogph">Facebook</a>
+						<a href="https://www.instagram.com/jeepsilogph">Instagram</a>
+                    </div>
+                </li>
+				<li><a href="file:///C:/Users/gavin/Downloads/PROJECT%20SUBMISSION/MENU.html">Menu</a></li>
+                <li><a href="file:///C:/Users/gavin/Downloads/PROJECT%20SUBMISSION/ABOUT%20US.html">About Us</a></li>
+                <li><a href="file:///C:/Users/gavin/Downloads/PROJECT%20SUBMISSION/APPLY.html">Hiring</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="fixed-background">
+        <div class="overlay"></div>
+        <div class="section-content">
+            <h1>Welcome to <b>JEEPSILOG PH</b></h1>
+            <center>
+<a href="https://www.facebook.com/jeepsilogph" style="display: inline-block; background-color: #750c0c; color: #fff; padding: 10px 20px; text-decoration: none; border-radius: 5px;">Inquire Now!</a>
+</center>
+        </div>
+    </section>
+    
+
+	<table>
+    <tr>
+        <td width= "50%">At <strong>Jeepsilog PH</strong>, we pride ourselves on delivering authentic Filipino silog meals that satisfy your cravings and warm your heart. Our carefully crafted dishes combine traditional flavors with modern twists, ensuring a delightful dining experience that celebrates the rich culinary heritage of the Philippines. From our iconic tapsilog to our mouthwatering longsilog, every bite at Jeepsilog PH is a journey through the flavors of home. Join us and experience the comfort and satisfaction of our Filipino silog meals today!
+		<div class="button-container">
+		<a href="file:///C:/Users/gavin/Downloads/PROJECT%20SUBMISSION/MENU.html" style="display: inline-block; background-color: #750c0c; color: #fff; padding: 10px 20px; text-decoration: none; border-radius: 5px;">View Menu</a>
+		</div>
+		</td>
+        <td width= "50%">
+		<div class="image-container">
+        <img class="animated-image" src="https://scontent.fmnl2-2.fna.fbcdn.net/v/t39.30808-6/299189723_379508234356253_7505375250945999595_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=efb6e6&_nc_ohc=k4wKLV2-e48AX8uqvQ5&_nc_oc=AQkdK1no81xxXZB90bhMTJyNWFVbpTLwKt0La3WAruMIMUku_WuND3bdPZflDe4ooTc&_nc_ht=scontent.fmnl2-2.fna&oh=00_AfBxf6zOeBSL-dcEVPsrauyFKans8tzcP2yp-WCNdOGGmw&oe=65C57C4E" alt="Animated Image">
+    </div>
+	</td>
+    </tr>
+</table>
+
+	
+	<div class="content-above">
+	<h1 id= "best">Our Bestsellers</h1>
+	
+	
+	<img src="https://scontent.fmnl2-2.fna.fbcdn.net/v/t39.30808-6/271139682_715611219823946_6381546014773815921_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=3635dc&_nc_ohc=h9XsSOHbXqQAX_Ck-nc&_nc_ht=scontent.fmnl2-2.fna&oh=00_AfCA99c1pRox88HNlJ-0WS-LSsYvYNYge7ZCPkHltoMoBA&oe=65C5B95D" alt="Seller 1" onclick="openLightbox('https://scontent.fmnl2-2.fna.fbcdn.net/v/t39.30808-6/271139682_715611219823946_6381546014773815921_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=3635dc&_nc_ohc=h9XsSOHbXqQAX_Ck-nc&_nc_ht=scontent.fmnl2-2.fna&oh=00_AfCA99c1pRox88HNlJ-0WS-LSsYvYNYge7ZCPkHltoMoBA&oe=65C5B95D')" width="300" height="300">
+	<img src="https://scontent.fmnl2-2.fna.fbcdn.net/v/t39.30808-6/271726710_715611243157277_1075709835300275190_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=3635dc&_nc_ohc=0aFNBynoNxEAX_C5Ua2&_nc_ht=scontent.fmnl2-2.fna&oh=00_AfA1yHGfmyQwxaYQq0pvoXVsaafHBRaKGdZrr4zZDWnFKQ&oe=65C5A048" alt="Seller 2" onclick="openLightbox('https://scontent.fmnl2-2.fna.fbcdn.net/v/t39.30808-6/271726710_715611243157277_1075709835300275190_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=3635dc&_nc_ohc=0aFNBynoNxEAX_C5Ua2&_nc_ht=scontent.fmnl2-2.fna&oh=00_AfA1yHGfmyQwxaYQq0pvoXVsaafHBRaKGdZrr4zZDWnFKQ&oe=65C5A048')" width="300" height="300">
+	<img src="https://scontent.fmnl2-2.fna.fbcdn.net/v/t39.30808-6/271596718_715611329823935_6871104560601502468_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=3635dc&_nc_ohc=A7bDeD3q20IAX8Sh7Yg&_nc_ht=scontent.fmnl2-2.fna&oh=00_AfB4W9gTTpJtbxKdkCtbo-4iTmPXLOaodPHPx_0BN9sJUg&oe=65C56253" alt="Seller 3" onclick="openLightbox('https://scontent.fmnl2-2.fna.fbcdn.net/v/t39.30808-6/271596718_715611329823935_6871104560601502468_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=3635dc&_nc_ohc=A7bDeD3q20IAX8Sh7Yg&_nc_ht=scontent.fmnl2-2.fna&oh=00_AfB4W9gTTpJtbxKdkCtbo-4iTmPXLOaodPHPx_0BN9sJUg&oe=65C56253')" width="300" height="300">
+
+
+
+<div id="lightbox" class="lightbox">
+  <span class="close-btn" onclick="closeLightbox()">&times;</span>
+  <img id="lightbox-img" src="" alt="Popup Image">
+</div>
+	
+	</div>
+	
+
+	<div class="white-inter">
+		<h1 id= "how">How to Order</h1>
+	
+	<img src="https://scontent.fmnl2-2.fna.fbcdn.net/v/t1.6435-9/106439253_308427717208967_5877450251175310523_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=dd63ad&_nc_ohc=MDvAij4_gwUAX8L0Qle&_nc_ht=scontent.fmnl2-2.fna&oh=00_AfAcKQRypg92Aw-PQ358Y1i9JbySxzgFTVBOm6tlR41_WA&oe=65E8A58A" alt="Instruction 1" onclick="openLightbox('https://scontent.fmnl2-2.fna.fbcdn.net/v/t1.6435-9/106439253_308427717208967_5877450251175310523_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=dd63ad&_nc_ohc=MDvAij4_gwUAX8L0Qle&_nc_ht=scontent.fmnl2-2.fna&oh=00_AfAcKQRypg92Aw-PQ358Y1i9JbySxzgFTVBOm6tlR41_WA&oe=65E8A58A')" width="350" height="700">
+	<img src="https://scontent.fmnl2-2.fna.fbcdn.net/v/t1.6435-9/106742348_308427743875631_568062405631883691_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=dd63ad&_nc_ohc=5ClqX_HZW00AX-RRgWC&_nc_ht=scontent.fmnl2-2.fna&oh=00_AfAbhu02kXcIMDBU_N2lQLXlEdj1R-N-XtRqdhApj1Oj6Q&oe=65E8821B" alt="Instruction 2" onclick="openLightbox('https://scontent.fmnl2-2.fna.fbcdn.net/v/t1.6435-9/106742348_308427743875631_568062405631883691_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=dd63ad&_nc_ohc=5ClqX_HZW00AX-RRgWC&_nc_ht=scontent.fmnl2-2.fna&oh=00_AfAbhu02kXcIMDBU_N2lQLXlEdj1R-N-XtRqdhApj1Oj6Q&oe=65E8821B')" width="350" height="700">
+	<img src="https://scontent.fmnl2-2.fna.fbcdn.net/v/t1.6435-9/106615320_308427667208972_154135801470254912_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=dd63ad&_nc_ohc=UV2VSY8ap6kAX9SDAIS&_nc_ht=scontent.fmnl2-2.fna&oh=00_AfAVaLtlB4wUv3YNXginEusRvHE6MGvFVygIbMR7lLpcvw&oe=65E893DF" alt="Instruction 3" onclick="openLightbox('https://scontent.fmnl2-2.fna.fbcdn.net/v/t1.6435-9/106615320_308427667208972_154135801470254912_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=dd63ad&_nc_ohc=UV2VSY8ap6kAX9SDAIS&_nc_ht=scontent.fmnl2-2.fna&oh=00_AfAVaLtlB4wUv3YNXginEusRvHE6MGvFVygIbMR7lLpcvw&oe=65E893DF')" width="350" height="700">
+
+
+
+<div id="lightbox" class="lightbox">
+  <span class="close-btn" onclick="closeLightbox()">&times;</span>
+  <img id="lightbox-img" src="" alt="Popup Image">
+</div>
+	
+	
+	
+	</div>
+	<center>
+	<a href="https://www.facebook.com/jeepsilogph" style="display: inline-block; background-color: #750c0c; color: #fff; padding: 10px 20px; text-decoration: none; border-radius: 5px;">Order Now!</a>
+	</center>
+	
+</br>
+
+	
+<img src="https://scontent.fmnl2-2.fna.fbcdn.net/v/t39.30808-6/271895391_713214710063597_1558348298965309472_n.jpg?stp=dst-jpg_s960x960&_nc_cat=111&ccb=1-7&_nc_sid=783fdb&_nc_ohc=Hzsoom9QbxEAX_OgXKV&_nc_ht=scontent.fmnl2-2.fna&oh=00_AfDF7gjJ4lQBKdt5cxmT2EHmKOyUXOYdEJlxc_3N5iHAlA&oe=65C65FF8" alt="Image map" usemap="#floorplan" width="100%" height="400">
+ 
+<map name="floorplan">
+    <area shape="rect" coords="193,155,240,198" href="https://www.facebook.com/jeepsilogph/" alt="facebook">
+    <area shape="rect" coords="193,209,240,252" href="https://www.instagram.com/jeepsilogph/" alt="instagram">
+</map>
+	
+	
+	
+	
+	
+	
+	
+	<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-column">
+            <h3><span style="color: White;">About Us</span></h3>
+            <p class="left-aligned"><span style="color: White;">At Jeepsilog PH, we specialize in serving authentic Filipino silog meals with a modern twist. From classic tapsilog to innovative longsilog, our dishes offer a delightful fusion of flavors. Despite having no physical stall, we deliver our mouthwatering meals straight to your doorstep, ensuring you enjoy the taste of home wherever you are.</span></p>
+        </div>
+        <div class="footer-column">
+            <h3><span style="color: White;">Quick Links</span></h3>
+            <ul>
+                <li><a href="file:///C:/Users/gavin/Downloads/PROJECT%20SUBMISSION/MAINPAGE.html"><span style="color: White;">Home</span></a></li>
+				<li><a href="file:///C:/Users/gavin/Downloads/PROJECT%20SUBMISSION/MENU.html"><span style="color: White;">Menu</span></a></li>
+				<li><a href="file:///C:/Users/gavin/Downloads/PROJECT%20SUBMISSION/ABOUT%20US.html"><span style="color: White;">About Us</span></a></li>
+				<li><a href="file:///C:/Users/gavin/Downloads/PROJECT%20SUBMISSION/APPLY.html"><span style="color: White;">Hiring</span></a></li>
+            </ul>
+	
+			<div class="social-icons">
+        <a href="https://www.instagram.com/jeepsilogph/"><img src="https://img.icons8.com/fluent/48/000000/instagram-new.png" alt="Instagram"></a>
+        <a href="https://www.facebook.com/jeepsilogph"><img src="https://img.icons8.com/color/48/000000/facebook-new.png" alt="Facebook"></a>
+    </div>
+        </div>
+    </div>
+	
+	
+	
+	<hr>
+	<p><span style="color: White;">&copy;  2024 Gavin Mikaela S. Escobar - JEEPSILOG PH</span></p>
+</footer>
+	
+	
+	
+	
+	
+	
+	
+<script>
+    function openLightbox(imageUrl) {
+        var lightbox = document.getElementById('lightbox');
+        var lightboxImg = document.getElementById('lightbox-img');
+        lightboxImg.src = imageUrl;
+        lightbox.style.display = 'block';
+    }
+
+    function closeLightbox() {
+        document.getElementById('lightbox').style.display = 'none';
+    }
+</script>
+	
+</body>
+</html>
